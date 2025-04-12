@@ -6,6 +6,8 @@ from app.config import Config
 
 class SessionMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
+        if Config.SESSION_COOKIE_NAME is None:
+            raise ValueError("SESSION_COOKIE_NAME is not set in the environment variables.")
         token = request.cookies.get(Config.SESSION_COOKIE_NAME,"")
         user = None
         if token:
