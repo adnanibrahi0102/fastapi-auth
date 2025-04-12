@@ -1,0 +1,17 @@
+# Ignore virtual environment
+venv/
+
+# Ignore environment variables
+.env
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# VSCode settings (optional)
+.vscode/
+
+# MacOS & Windows files
+.DS_Store
+Thumbs.db
